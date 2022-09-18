@@ -1,0 +1,28 @@
+
+    <div class="card text-center border border-primary shadow-0 " style="margin:30px 0 0 0 ;background-color:#ffffff;">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img style="max-height:300px;min-height:300px;object-fit:cover;" [src]="ImgName" class="img-fluid" />
+            <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+            </a>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">{{Car.Make+" "+Car.Model}}</h5>
+            <div style="top:10px;left:5px;" class="overlay-content"><strong><i
+                        class="fa fa-dashboard"></i>
+                   {{Car.Milage+" KM"}}</strong> &nbsp;&nbsp;<strong><i class="fa fa-cube"></i>{{Car.Engine}}</strong>&nbsp;&nbsp;<strong><i class="fa fa-cog"></i>
+                   {{Car.Gearbox}}</strong>&nbsp;&nbsp;<strong><i class="fa fa-map-marker"></i>
+                    {{Car.SellerCity}}</strong>&nbsp;
+                <p><span><strong>{{Car.Price + Car.PriceType}}</strong></span></p>
+                <p>{{Car.EnginePower+" Hp"}} / {{Car.Fuel}} / {{Car.Year}} / {{ (Car.IsSalon==1) ?"New Vehicle":'Used Vehicle'}}</p>
+            </div>
+
+            <div class="row justify-content-around">
+                <button routerLinkActive="active" [routerLink]="['../cardetail/',Car.id]" type="button" class="btn btn-primary col-md-4">View Details</button>
+
+                <button (click)="RemoveFavClick()" *ngIf="IsFav && FavUser" type="button" class="btn btn-primary col-md-4">Remove Favorite</button>
+                <button (click)="AddFavClick()" *ngIf="!IsFav && FavUser" type="button" class="btn btn-primary col-md-4">Add Favorite</button>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,106 @@
+
+  .btnBox{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height:100%;
+  }
+  .btn{
+    background-color: #4883FF;
+    border-radius: 10px;
+    width:140px;
+    height:48px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #fff;
+    font-weight: 600;
+    transition: background-color 1s ease-out;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .btn:hover{
+    background-position: right center;
+    background-color:#C2D5FF;
+    transition-delay: .2s;
+  }
+  
+  .modalMainBox{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    z-index:9999;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    left: 0;
+    overflow: hidden;
+  }
+  .showModaal{
+    border-radius: 10px;
+    animation-name: example;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    transform: translateX(0px);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+  
+  .disp-none{
+    display:none;
+  }
+  
+  .hideModal{
+    animation-name: example2;
+    animation-duration: .5s;
+    transform: translateX(1600px);
+    background:radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    border-radius: 10px;
+    height: 100px;
+    width: 300px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+  
+  
+  h3{
+    color: #fff;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  @keyframes example {
+    0%  {
+      transform: translateX(-1600px) skewX(20deg) scaleX(1.8);
+      opacity: 0;
+    }
+    
+    50%{
+      transform: translateX(80px) skewX(15deg) scaleX(.7);
+      opacity:1;
+    }
+    
+    100%{
+       transform: translateX(0px) skewX(0deg) scaleX(1)
+    }
+  }
+  
+  @keyframes example2{
+     0%  {
+      transform: translateX(0px) skewX(0deg) scaleX(1.8);
+    }
+    
+    50%{
+      transform: translateX(-70px) skewX(-15deg) scaleX(.7);
+    }
+    
+    100%{
+       transform: translateX(1600px) skewX(-20deg) scaleX(1)
+    }
+  }

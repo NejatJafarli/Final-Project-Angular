@@ -1,0 +1,250 @@
+<section class="banner banner-secondary bannercs" id="top">
+</section>
+<!-- <div class="disp-none" id="modalBox">
+    <div id='modal'>
+    </div>
+</div> -->
+<main>
+    <section class="featured-places">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Vehicle Type:</label>
+                        <select [(ngModel)]="SelectedCarType" name="CarType" class="form-control">
+                            <option value="All">--All--</option>
+                            <option *ngFor="let c of CarType">{{c}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Make:</label>
+
+                        <select (input)="OnChange($event)" [(ngModel)]="SelectedMake" name="Make" class="form-control">
+                            <option value="All">-- All --</option>
+                            <option *ngFor="let c of Make">{{c}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Model:</label>
+                        <select  [(ngModel)]="SelectedModel" name="Model" class="form-control">
+                            <option value="All">-- All --</option>
+                            <option *ngFor="let c of Model">{{c}}</option>
+                        </select>
+                    </div>
+                </div>
+                <hr style="margin:10px 0 0 5%; padding :0 0 5px 0; width:90%" />
+
+
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Engine size:</label>
+
+                        <select [(ngModel)]="SelectedEngineSize" name="EngineSize" class="form-control">
+                            <option value="All">-- All --</option>
+                            <option *ngFor="let c of EngineSize">{{c}}</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Power:</label>
+
+                        
+                        <select [(ngModel)]="SelectedPower" name="Power" class="form-control">
+                            <option value="All">-- All --</option>
+                            <option *ngFor="let c of Power">{{c +" Hp"}}</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Fuel:</label>
+
+                        <select [(ngModel)]="SelectedFuel" name="Fuel" class="form-control">
+                            <option value="All">-- All --</option>
+                            <option *ngFor="let c of Fuel">{{c}}</option>
+
+                        </select>
+                    </div>
+                </div>
+                <hr style="margin:10px 0 0 5%; padding :0 0 5px 0; width:90%" />
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Gearbox:</label>
+
+                        <select [(ngModel)]="SelectedGearbox" name="Gearbox" class="form-control">
+                            <option value="All">-- All --</option>
+                            <option *ngFor="let c of Gearbox">{{c}}</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Color:</label>
+
+                        <select [(ngModel)]="SelectedColor"  name="Color" class="form-control">
+                            <option value="All">-- All --</option>
+                            <option *ngFor="let c of Color">{{c}}</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label>City:</label>
+
+                        <select [(ngModel)]="SelectedCity" name="City" class="form-control">
+                            <option value="All">-- All --</option>
+                            <option *ngFor="let c of City">{{c}}</option>
+
+                        </select>
+                    </div>
+                </div>
+                <hr style="margin:10px 0 0 5%; padding :0 0 5px 0; width:90%" />
+                <div class="col-lg-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Set Price:</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input [(ngModel)]="SelectedMinPrice" name="MinPrice" type="number" placeholder="MinPrice" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input [(ngModel)]="SelectedMaxPrice" name="MaxPrice" type="number" placeholder="MaxPrice" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Set Millage:</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input [(ngModel)]="SelectedMinMileage"  name="MinMileage" type="number" placeholder="MinMileage" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input [(ngModel)]="SelectedMaxMileage" name="MaxMileage" type="number" placeholder="MaxMileage" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-xs-12">
+                    <div class="form-group">
+                        <label>Set Year:</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <select [(ngModel)]="SelectedMinYear"  style="margin-bottom:0px!important;" name="MinYear" class="form-control">
+                                    <option value="All">Min Year</option>
+                                    <option value='1978'>1978</option>
+                                    <option value='1984'>1984</option>
+                                    <option value='1987'>1987</option>
+                                    <option value='1989'>1989</option>
+                                    <option value='1990'>1990</option>
+                                    <option value='1992'>1992</option>
+                                    <option value='1993'>1993</option>
+                                    <option value='1994'>1994</option>
+                                    <option value='1995'>1995</option>
+                                    <option value='1996'>1996</option>
+                                    <option value='1997'>1997</option>
+                                    <option value='1998'>1998</option>
+                                    <option value='1999'>1999</option>
+                                    <option value='2000'>2000</option>
+                                    <option value='2001'>2001</option>
+                                    <option value='2002'>2002</option>
+                                    <option value='2003'>2003</option>
+                                    <option value='2004'>2004</option>
+                                    <option value='2005'>2005</option>
+                                    <option value='2006'>2006</option>
+                                    <option value='2007'>2007</option>
+                                    <option value='2008'>2008</option>
+                                    <option value='2009'>2009</option>
+                                    <option value='2010'>2010</option>
+                                    <option value='2011'>2011</option>
+                                    <option value='2012'>2012</option>
+                                    <option value='2013'>2013</option>
+                                    <option value='2014'>2014</option>
+                                    <option value='2015'>2015</option>
+                                    <option value='2016'>2016</option>
+                                    <option value='2017'>2017</option>
+                                    <option value='2018'>2018</option>
+                                    <option value='2019'>2019</option>
+                                    <option value='2020'>2020</option>
+                                    <option value='2021'>2021</option>
+                                    <option value='2022'>2022</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <select [(ngModel)]="SelectedMaxYear"  style="margin-bottom:0px!important;" name="MaxYear" class="form-control">
+                                    <option selected value="All">Max Year</option>
+                                    <option value='2022'>2022</option>
+                                    <option value='2021'>2021</option>
+                                    <option value='2020'>2020</option>
+                                    <option value='2019'>2019</option>
+                                    <option value='2018'>2018</option>
+                                    <option value='2017'>2017</option>
+                                    <option value='2016'>2016</option>
+                                    <option value='2015'>2015</option>
+                                    <option value='2014'>2014</option>
+                                    <option value='2013'>2013</option>
+                                    <option value='2012'>2012</option>
+                                    <option value='2011'>2011</option>
+                                    <option value='2010'>2010</option>
+                                    <option value='2009'>2009</option>
+                                    <option value='2008'>2008</option>
+                                    <option value='2007'>2007</option>
+                                    <option value='2006'>2006</option>
+                                    <option value='2005'>2005</option>
+                                    <option value='2004'>2004</option>
+                                    <option value='2003'>2003</option>
+                                    <option value='2002'>2002</option>
+                                    <option value='2001'>2001</option>
+                                    <option value='2000'>2000</option>
+                                    <option value='1999'>1999</option>
+                                    <option value='1998'>1998</option>
+                                    <option value='1997'>1997</option>
+                                    <option value='1996'>1996</option>
+                                    <option value='1995'>1995</option>
+                                    <option value='1994'>1994</option>
+                                    <option value='1993'>1993</option>
+                                    <option value='1992'>1992</option>
+                                    <option value='1990'>1990</option>
+                                    <option value='1989'>1989</option>
+                                    <option value='1987'>1987</option>
+                                    <option value='1984'>1984</option>
+                                    <option value='1978'>1978</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button (click)="OnClick($event)" style="margin-top:30px; width:33%;" type="button" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </section>
+    <section class="featured-places">
+        <div class="container">
+            <div class="row">
+                <div *ngFor="let c of cars" class="col-md-4 col-sm-6 col-xs-12 ">
+                    <app-car-card [Car]="c" ></app-car-card>
+                </div>
+            </div>
+            <div class="text-center">
+                <button (click)="LoadMore($event)" style="margin-top:30px; width:33%;" type="button" class="btn btn-primary">Load More</button>
+            </div>
+        </div>
+    </section>

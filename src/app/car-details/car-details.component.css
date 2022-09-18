@@ -1,0 +1,25 @@
+.MyClass {
+  min-width: 150px !important;
+  width: 185px !important;
+  min-height: 150px !important;
+  height: 185px !important;
+  object-fit: cover;
+  cursor: pointer;
+  margin: 5px 0px;
+}
+.active {
+  border: 5px solid blue;
+}
+
+
+.Link{
+  color: blue;
+  text-decoration: underline;
+  cursor:pointer;
+}
+.Link:Hover{
+  color: rgb(255, 0, 0);
+}
+.Link :active{
+  background-color: rgb(0, 255, 0);
+}

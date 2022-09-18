@@ -1,0 +1,152 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <div>
+                <img id="head-image" [src]="FirstImg" alt="" style="    display: block;
+                max-width: 100%;
+                height: auto;">
+            </div>
+            <br>
+            <div class="row" style="display:flex; flex-wrap: wrap;">
+                <!--images  -->
+                <div *ngFor="let Img of ImgNames" class="col-sm-4 col-xs-6">
+                    <div class="form-group">
+                        <img (click)="OnClickImg($event)" [ngClass]="['MyClass']" src="{{Img}}" alt=""
+                            class="img-responsive " />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Car Details</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2><strong class="text-primary"> {{Car.Price+" "+Car.PriceType}}</strong></h2>
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Type:</span>
+
+                                        <strong class="pull-right"> {{Car.CarType}}</strong>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Make:</span>
+
+                                        <strong class="pull-right"> {{Car.Make}}</strong>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Model:</span>
+
+                                        <strong class="pull-right"> {{Car.Model}}</strong>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Mileage:</span>
+
+                                        <strong class="pull-right"> {{Car.Milage +" km"}}</strong>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Fuel:</span>
+
+                                        <strong class="pull-right"> {{Car.Fuel}}</strong>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Engine size:</span>
+
+                                        <strong class="pull-right"> {{Car.Engine}}</strong>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Power:</span>
+
+                                        <strong class="pull-right"> {{Car.EnginePower + " Hp"}}</strong>
+                                    </div>
+                                </li>
+
+
+                                <li class="list-group-item">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Gearbox:</span>
+
+                                        <strong class="pull-right"> {{Car.Gearbox}}</strong>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="clearfix">
+                                        <span class="pull-left">Color:</span>
+
+                                        <strong class="pull-right"> {{Car.Color}}</strong>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+
+            <ngb-accordion #acc="ngbAccordion" activeIds="config-panel-one">
+                <ngb-panel title="Vehicle Extras" id="config-panel-one">
+                    <ng-template ngbPanelContent>
+                        <div class="row">
+                            <div *ngFor="let ext of Extras" class="col-sm-6 col-xs-12">
+                                <p>
+                                    {{ext}}
+                                </p>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel title="Vehicle Description">
+                    <ng-template ngbPanelContent>
+                        <p>
+                            {{Car.Description}}
+                        </p>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel title="Contact Detail">
+                    <ng-template ngbPanelContent>
+                        <p *ngIf="IsSalon">
+                            <strong> Salon Name: </strong><a class="Link" (click)="SellerNameClick()">{{Car.SellerName}}</a>
+                        </p>
+                        <p *ngIf="!IsSalon">
+                            <strong>Name:</strong> {{Car.SellerName}}
+                        </p>
+                        <p *ngFor="let P of Contacts">
+                            <strong>Phone:</strong> {{P}}
+                        </p>
+                        <p>
+                            <strong>Location:</strong> {{Car.SellerCity}}
+                        </p>
+                        
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+    </div>
+</div>
