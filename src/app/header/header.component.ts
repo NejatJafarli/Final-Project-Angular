@@ -142,12 +142,25 @@ export class HeaderComponent implements OnInit {
 
     console.log(res);
 
-    // this.modalService.dismissAll();
+    if(res=="Signup Successful"){
+
+      this.filedata=null;
+      this.RegisterEmail="";
+      this.RegisterPass="";
+      this.RegisterUserName="";
+
+      this.modalService.dismissAll();
+    }
+    else{
+      alert(res)
+    }
+    
   }
   Logout() {
     sessionStorage.removeItem('user');
     this.haveUser = '';
     alert('Logout Successfull');
+    this.redirectTo('/');
   }
   redirectTo(uri: string) {
     this.router

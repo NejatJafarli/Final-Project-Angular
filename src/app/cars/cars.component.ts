@@ -193,6 +193,8 @@ export class CarsComponent implements OnInit {
       this.params += `&FavUserId=${res}`;
     }
 
+    
+
     //get states from route
 
     if (this.SellerName) this.params += `&SellerName=${this.SellerName}`;

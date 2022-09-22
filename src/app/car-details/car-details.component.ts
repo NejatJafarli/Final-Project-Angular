@@ -45,7 +45,7 @@ export class CarDetailsComponent implements OnInit {
     console.log(this.id);
     //get car by id
     let res = await this.http
-      .get<Car>('http://localhost/apitest/GetCarById.php?id=' + this.id)
+      .get<Car>('http://localhost/apitest/GetCarById.php?CarId=' + this.id)
       .toPromise();
     this.Car = res;
     this.http
